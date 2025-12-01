@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Profile">
+  <rect width="100%" height="100%" fill="#07161a" rx="8"/>
+  <g transform="translate(120,120)">
+    <circle cx="0" cy="-18" r="34" fill="#0f2b24" stroke="#7ef3a6" stroke-opacity="0.14" stroke-width="2"/>
+    <rect x="-48" y="32" width="96" height="40" rx="6" fill="#0b1418" stroke="#ffffff" stroke-opacity="0.02"/>
+  </g>
+</svg>

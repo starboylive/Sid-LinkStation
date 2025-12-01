@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240" role="img" aria-label="Project thumbnail">
+  <rect width="100%" height="100%" fill="#07161a"/>
+  <g transform="translate(18,18)">
+    <rect width="364" height="204" rx="8" fill="#081218" stroke="#7ef3a6" stroke-opacity="0.06"/>
+    <text x="28" y="52" fill="#7ef3a6" font-family="ui-monospace, monospace" font-size="20">$ npm run build</text>
+    <rect x="28" y="70" width="280" height="10" rx="3" fill="#0b1418"/>
+    <text x="28" y="120" fill="#8b9aa0" font-family="ui-monospace, monospace" font-size="13">A tiny project that mimics terminal interaction.</text>
+  </g>
+</svg>

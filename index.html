@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sid - $Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="containder">
+        <div class="terminal">
+            <header class="term-header">
+                <div class="term-title">sid@portfolio:~$ <span class="muted">Portfolio</span></div>
+                <nav class="term-nav" aria-label="Main navigation">
+                    <a href="#about">About</a>
+                    <a href="projects.html">Skills{}</a>
+                    <a href="#contact">Connect!</a>
+                </nav>
+            </header>
+
+            <main class="term-main">
+                <section class="hero" id="about">
+                    <div class="hero-left">
+                        <img src="images/zuck.jpg"  alt="profile" class="avatar">
+                    </div>
+                    <div class="hero-right">
+                        <h1>Hi, I'm Sid.</h1>
+                        <p class="lead">I’m Sid — a multidisciplinary creator who blends design, development, and
+                            storytelling to build modern digital experiences.
+                            I work across UI/UX, graphic design, motion/video editing, and web development, turning
+                            ideas into clean, functional, and visually strong products.
+
+                            I’m currently expanding my portfolio through real projects in web apps, branding, and
+                            content creation while leveling up in advanced C++, competitive programming, and startup
+                            building.
+                            My goal is simple: create things that look good, work well, and actually make an impact.</p>
+
+                        <div class="panel-block">
+                            <h3>GitHub Activity</h3>
+
+                            <div class="github-heatmap">
+                                <img src="https://ghchart.rshah.org/starboylive" alt="GitHub Activity">
+                            </div>
+
+                            
+
+                        </div>
+
+                        <div class="chips">
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">Accessibility</span>
+                        </div>
+                        <div class="terminal-line" aria-live="polite">
+                            <code class="typed" id="typed" aria-hidden="false"></code><span class="cursor"
+                                aria-hidden="true">█</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="projects" id="projects">
+                    <h2>Professional Skills Areas </h2>
+                    <div class="grid">
+                        <article class="card">
+                            <img src="images/project.png" alt="project thumbnail" class="thumb">
+                            <h3>All-in-One Portfolio</h3>
+                            <p>Static single-file portfolio demonstrating a TUI visual style.</p>
+                            <a class="btn" href="projects.html">View more</a>
+                        </article>
+                        <article class="card">
+                            <img src="images/image.png" alt="project thumbnail" class="thumb">
+                            <h3>Sidiot Media</h3>
+                            <p>Sidiotic Media turns ideas into striking visuals through design, motion, and
+                                storytelling.</p>
+                            <a class="btn" href="projects.html">View more</a>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="contact" id="contact">
+                    <h2>Contact</h2>
+                    <div class="social-bar">
+                        <a href="https://github.com/starboylive"><button id="home5">Github</button></a>
+                        <a href="https://x.com/sidisrealfr"><button id="home5">Twitter</button></a>
+                        <a href="https://www.linkedin.com/in/starboylive/"><button id="home5">Linkedin</button></a>
+                        <a href="https://www.instagram.com/sidiswater/"><button id="home5">Instagram</button></a>
+                        <a href="https://www.youtube.com/@sidiswired"><button id="home4">YouTube</button></a>
+                        <a href="images/sid-resume.pdf" download><button id="resume">Resume🗒️</button></a>
+
+                </section>
+            </main>
+
+            <footer class="term-footer">
+                <div class="status">status: <span class="ok">online</span> | last-build: <span
+                        class="muted">2025-12-02</span></div>
+            </footer>
+        </div>
+
+    </div>
+    </div>
+
+    <script>
+        /* Terminal-style typewriter (respecting prefers-reduced-motion) */
+        (function () {
+            const el = document.getElementById('typed');
+            const cursor = document.querySelector('.cursor');
+            if (!el) return;
+            const phrases = [
+                '$ npm run start -- demo',
+                '$ git clone these/portfolio',
+                '$ open ./what-i-do.txt',
+            ];
+            const typingSpeed = 40;
+            const pause = 1200;
+
+            // Prevent layout shift by reserving width for the longest phrase (in ch units)
+            const maxLen = phrases.reduce((m, s) => Math.max(m, s.length), 0);
+            el.style.minWidth = (maxLen + 1) + 'ch';
+
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                el.textContent = phrases[0];
+                if (cursor) cursor.style.display = 'none';
+                return;
+            }
+
+            let p = 0, i = 0, deleting = false;
+            function tick() {
+                const full = phrases[p];
+                if (!deleting) {
+                    el.textContent = full.slice(0, ++i);
+                    if (i === full.length) {
+                        deleting = true;
+                        setTimeout(tick, pause);
+                        return;
+                    }
+                } else {
+                    el.textContent = full.slice(0, --i);
+                    if (i === 0) {
+                        deleting = false;
+                        p = (p + 1) % phrases.length;
+                    }
+                }
+                setTimeout(tick, deleting ? Math.max(20, typingSpeed / 2) : typingSpeed);
+            }
+            setTimeout(tick, 600);
+        })();
+
+        // mobile optimization – show last 90 days only
+        const isMobile = window.innerWidth <= 768;
+
+        let contributions = data;  // full 365 days
+
+        // Only show last 90 days on mobile
+        if (window.innerWidth <= 768) {
+            contributions = contributions.slice(-90);
+        }
+
+
+        if (isMobile) {
+            displayContributions = contributions.slice(-90);  // last 90 days
+        }
+
+    </script>
+
+</body>
+
+</html>

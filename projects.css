@@ -1,0 +1,184 @@
+/* projects.css — page-specific styles for projects.html following the TUI theme */
+:root {
+    --panel-width: 280px
+}
+
+.projects-layout {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start
+}
+
+/* Left panel */
+.projects-panel {
+    width: var(--panel-width);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+    border-radius: 8px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.02)
+}
+
+.projects-panel .panel-block {
+    margin-bottom: 12px
+}
+
+.projects-panel h3 {
+    color: var(--accent);
+    margin-bottom: 8px
+}
+
+.projects-panel label {
+    display: block;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 6px 0
+}
+
+.projects-panel input[type="checkbox"] {
+    margin-right: 8px
+}
+
+.panel-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.01);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    margin-bottom: 8px
+}
+
+.panel-btn:hover {
+    box-shadow: 0 6px 18px rgba(7, 23, 16, 0.4)
+}
+
+/* Right area */
+.projects-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.panel-header h2 {
+    margin: 0;
+    color: var(--text)
+}
+
+.grid.large {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, var(--panel), var(--panel-2));
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    height: 100%
+}
+
+.card-body {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start
+}
+
+.card-body .thumb {
+    width: 120px;
+    height: 86px;
+    flex-shrink: 0
+}
+
+.card h3 {
+    margin: 0;
+    color: var(--accent)
+}
+
+.card p {
+    margin: 6px 0;
+    color: var(--muted);
+    font-size: 0.95rem
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px
+}
+
+#yt {
+    color: #d43d3d;
+}
+
+/* Make actions align to the bottom of the card */
+.card {
+    display: flex;
+    flex-direction: column
+}
+
+.card-actions {
+    margin-top: auto
+}
+
+/* Small screens: stack panel above grid */
+@media (max-width:920px) {
+    .projects-layout {
+        flex-direction: column
+    }
+
+    .projects-panel {
+        width: 100%
+    }
+}
+
+/* Accessibility: keyboard focus for panel buttons */
+.panel-btn:focus {
+    outline: 3px solid rgba(126, 243, 166, 0.06);
+    outline-offset: 2px
+}
+
+.github-heatmap {
+    width: 200px;
+    /* whatever fits your sidebar */
+    /* height: 45px;               zooms into last few months */
+    overflow: hidden;
+    /* hides old months */
+    border-radius: 6px;
+}
+
+.github-heatmap img {
+    width: 600px;
+    /* zoom in horizontally */
+    transform: translateX(-400px);
+    /* move left to show latest months */
+}
+
+@media (max-width: 400) {
+    .github-heatmap {
+        width: 200px;
+        /* whatever fits your sidebar */
+        /* height: 45px;               zooms into last few months */
+        overflow: hidden;
+        /* hides old months */
+        border-radius: 6px;
+    }
+
+    .github-heatmap img {
+        width: 600px;
+        /* zoom in horizontally */
+        transform: translateX(-400px);
+        /* move left to show latest months */
+    }
+}
