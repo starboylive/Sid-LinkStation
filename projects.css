@@ -182,3 +182,32 @@
         /* move left to show latest months */
     }
 }
+@media (max-width: 768px) {
+    .github-heatmap {
+        width: 300px;
+        /* whatever fits your sidebar */
+        /* height: 45px;               zooms into last few months */
+        overflow: hidden;
+        /* hides old months */
+        border-radius: 6px;
+    }
+
+    .github-heatmap img {
+        width: 678px;
+        /* zoom in horizontally */
+        transform: translateX(-400px);
+        /* move left to show latest months */
+    }
+}
+
+.goback {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 1rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+}

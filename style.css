@@ -8,7 +8,6 @@ body,
 html {
     height: 100%;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
-    /* font-family: monospace; */
     background: radial-gradient(1200px 600px at 10% 10%, #071018 0%, #000000 30%), linear-gradient(135deg, #080a0b 0%, #020203 100%);
 }
 
@@ -19,18 +18,6 @@ html {
     align-items: flex-start;
     padding: 48px 24px;
     color: var(--text, #d7e9d7);
-}
-
-.goback {
-    position: fixed;
-    top: 16px;
-    left: 16px;
-    text-decoration: none;
-    color: var(--accent);
-    font-size: 1rem;
-    padding: 6px 10px;
-    border-radius: 6px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
 }
 
 :root {
@@ -348,3 +335,55 @@ a:focus {
         transform-origin: left top;
     }
 }
+
+@media (max-width: 768px) {
+    .github-heatmap {
+        width: 300px;
+        /* whatever fits your sidebar */
+        /* height: 45px;               zooms into last few months */
+        overflow: hidden;
+        /* hides old months */
+        border-radius: 6px;
+    }
+
+    .github-heatmap img {
+        width:600px;
+        /* zoom in horizontally */
+        transform: translateX(-300px);
+        /* move left to show latest months */
+    }
+}
+
+@media (max-width: 400) {
+    .github-heatmap {
+        width: 200px;
+        /* whatever fits your sidebar */
+        /* height: 45px;               zooms into last few months */
+        overflow: hidden;
+        /* hides old months */
+        border-radius: 6px;
+    }
+
+    .github-heatmap img {
+        width: 600px;
+        /* zoom in horizontally */
+        transform: translateX(-400px);
+        /* move left to show latest months */
+    }
+}
+
+.goback {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    text-decoration: none;
+    color: var(--accent);
+    font-size: 1rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.00));
+}
+@media (max-width: 600px) {
+    .projects-layout {
+        flex-direction: column
+    }   }
